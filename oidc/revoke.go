@@ -80,7 +80,7 @@ func revokeToken(ctx context.Context, revocationEndpoint string, token, tokenTyp
 	}
 	values := url.Values{}
 	values.Set("token", token)
-	values.Set("token_type_hint", tokenType)
+	// values.Set("token_type_hint", tokenType)
 	req, err := http.NewRequest(http.MethodPost, revocationEndpoint, strings.NewReader(values.Encode()))
 	if err != nil {
 		return err
